@@ -50,7 +50,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
-
+TARGET_KERNEL_VERSION := 4.14
 BOARD_KERNEL_CMDLINE := \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
@@ -61,9 +61,11 @@ BOARD_KERNEL_CMDLINE := \
     lpm_levels.sleep_disabled=1 \
     service_locator.enable=1
 
+KERNEL_LLVM_SUPPORT := true
+KERNEL_CUSTOM_LLVM := true
+#KERNEL_SD_LLVM_SUPPORT := true
 BOARD_MKBOOTIMG_ARGS := --header_version 2
-
-TARGET_KERNEL_CONFIG := vendor/sdmsteppe-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/violet-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
 
 # Media
